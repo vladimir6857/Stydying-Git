@@ -1,0 +1,88 @@
+<!DOCTTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>HELLOWORLD</TITLE>
+</HEAD>
+<BODY>
+<H1>HELLO,WORLD!!!</H1>
+# Основные команды Git с примером создания файла и типичным workflow
+
+## Предварительные условия:
+# - Установленный Git (проверить git --version)
+# - Аккаунт на GitHub, GitLab, Bitbucket или аналогичном сервисе (для работы с удаленным репозиторием)
+
+# 1. Инициализация репозитория (git init):
+mkdir my-project
+cd my-project
+git init
+
+# 2. Создание файла (пример):
+echo "Hello, Git!" > my_file.txt
+
+# 3. Просмотр состояния репозитория (git status):
+git status
+
+# 4. Добавление файла в индекс (staging area) (git add):
+git add my_file.txt
+
+# 5. Создание коммита (git commit):
+git commit -m "Add my_file.txt with a greeting"
+
+# 6. Просмотр истории коммитов (git log):
+git log
+
+# 7. Создание удаленного репозитория (на GitHub, GitLab, Bitbucket):
+#    - Создайте новый репозиторий на выбранной платформе.
+#    - Получите URL удаленного репозитория.
+
+# 8. Связывание локального репозитория с удаленным (git remote add):
+git remote add origin https://github.com/your_username/my-project.git # Замените your_username
+
+# 9. Отправка изменений на удаленный репозиторий (git push):
+git push -u origin main
+
+# 10. Клонирование репозитория (git clone):
+git clone https://github.com/your_username/my-project.git # Замените your_username
+
+# 11. Получение изменений с удаленного репозитория (git pull):
+git pull origin main
+
+# 12. Создание ветки (git branch):
+git branch feature/new-feature
+
+# 13. Переключение между ветками (git checkout):
+git checkout feature/new-feature
+# git checkout -b feature/new-feature # Создать и переключиться
+
+# 14. Слияние веток (git merge):
+git checkout main
+git merge feature/new-feature
+
+# 15. Разрешение конфликтов слияния: (Отредактировать файлы, git add, git commit)
+
+# 16. Удаление ветки (git branch -d):
+git branch -d feature/new-feature
+
+# 17. Игнорирование файлов ( .gitignore ):
+# Пример содержимого .gitignore:
+# 
+# *.log
+# *.swp
+# /tmp/
+# config.ini
+#
+
+## Типичный Workflow:
+# 1. git clone <repository_url>
+# 2. git checkout -b feature/new-feature
+# 3. (Редактировать файлы)
+# 4. git add .
+# 5. git commit -m "Implement new feature"
+# 6. git push origin feature/new-feature
+# 7. (Создать Pull Request)
+# 8. (После одобрения, слияние)
+# 9. git checkout main
+# 10. git pull origin main
+# 11. git branch -d feature/new-feature
+</BODY>
+</HTML>
